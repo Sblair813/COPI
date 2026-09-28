@@ -1,146 +1,118 @@
 # COPI — Problem Definition
 
-## Problem Statement
+## Problem
 
-Organizations frequently receive new product records that are incomplete, inconsistent, or missing information required for downstream use.
+When a new product enters an organization, the information needed to onboard it is often incomplete, inconsistent, or unavailable.
 
-The process of resolving these gaps is often dependent on manual identification, communication, follow-up, data entry, and status tracking.
+The resulting work is frequently handled through a combination of spreadsheets, email, manual review, and follow-up.
 
-As a result, product onboarding can become slow, inconsistent, difficult to monitor, and difficult to audit.
+The problem is not simply that information is missing.
+
+The larger problem is that there may be no consistent process for determining:
+
+* What information is actually required
+* What is missing or invalid
+* Who is responsible for providing it
+* What has already been requested
+* Whether a response actually resolves the issue
+* When the product can be considered complete
 
 ## Current-State Challenges
 
-### 1. Missing Information Is Identified Manually
+From a Product Operations perspective, the process can involve a lot of repetitive work:
 
-People may need to inspect product records to determine which required information is absent or incomplete.
+**Identify → Email → Follow up → Receive → Review → Update → Check again**
 
-This creates repetitive work and increases the possibility that missing requirements will be overlooked.
+Some common issues include:
 
-### 2. Requirements May Not Be Consistently Applied
+* Requirements vary by product type
+* Missing information may be identified manually
+* Vendor requests may not be consistent
+* Follow-ups can be difficult to track
+* Responses may be partial or unclear
+* The same information may be requested more than once
+* It may be difficult to see exactly what remains outstanding
+* The history of decisions and communications can be fragmented
 
-Different products, product categories, or business situations may have different information requirements.
-
-Without a structured requirements framework, individuals may rely on experience, spreadsheets, documentation, or tribal knowledge to determine what is needed.
-
-### 3. Vendor Communication Is Often Reactive
-
-When information is missing, someone must determine:
-
-* What is missing
-* Who should provide it
-* What exactly should be requested
-* What format is acceptable
-* Whether supporting documentation is required
-
-Requests may therefore vary in clarity and completeness.
-
-### 4. Follow-Up Requires Manual Tracking
-
-A vendor response may be incomplete or may resolve only some of the outstanding requirements.
-
-Without a structured process, teams may need to manually track:
-
-* What was requested
-* When it was requested
-* What was received
-* What remains outstanding
-* When follow-up is required
-
-### 5. Completion May Be Difficult to Determine
-
-A product record can appear populated while still failing one or more business requirements.
-
-The organization needs a consistent way to determine whether a product is actually ready for downstream use.
-
-### 6. Process History May Be Fragmented
-
-Product onboarding activity may occur across email, spreadsheets, product systems, shared documents, and individual knowledge.
-
-This can make it difficult to reconstruct the history of how a product record was completed.
-
-## Business Impact
-
-An inconsistent onboarding process can contribute to:
-
-* Longer product onboarding cycles
-* Increased manual workload
-* Repeated vendor communication
-* Delayed downstream processes
-* Inconsistent product information
-* Difficulty identifying responsibility for outstanding data
-* Limited visibility into onboarding status
-* Increased operational risk
-* Difficulty demonstrating how product information was obtained or resolved
-
-The specific impact will vary by organization and industry.
-
-## User Impact
+## Who Is Affected?
 
 ### Product Operations
 
-People responsible for onboarding products may spend significant time identifying gaps, communicating with vendors, tracking responses, and determining completion.
+Needs a manageable way to identify and resolve outstanding product requirements without manually coordinating every step.
 
-### Vendors
+### Product Data / Master Data
 
-Vendors may receive requests that are unclear, incomplete, duplicated, or difficult to act upon.
+Needs product information to be complete and usable before it moves into downstream systems.
+
+### Vendors and Other Information Owners
+
+Need clear requests that explain exactly what information is required and how to provide it.
 
 ### Downstream Users and Systems
 
-Downstream teams and systems depend on product records being sufficiently complete and reliable for their intended use.
+Depend on product information being sufficiently complete and accurate for their use.
 
-### Management
+## Business Impact
 
-Leaders may lack a consistent view of onboarding volume, status, outstanding work, vendor response activity, and process performance.
+An inefficient onboarding process can contribute to:
+
+* Longer product onboarding times
+* More manual operational effort
+* Repeated communication
+* Delays to downstream processes
+* Inconsistent product information
+* Limited visibility into onboarding status
+* Difficulty reconstructing what happened
+
+The impact will vary by organization and product type, so these areas would need to be validated with actual users and operational data.
 
 ## Opportunity
 
-COPI provides an opportunity to transform product onboarding from a primarily manual coordination process into a structured, traceable workflow.
+COPI could provide a consistent workflow around the problem without requiring every product type to follow exactly the same requirements.
 
-The opportunity is not simply to automate email or data entry.
+The opportunity is to separate:
 
-The opportunity is to create a system that understands:
+**What the business requires**
 
-* What information is required
-* What information is missing
-* Who is responsible for resolving the gap
-* What communication is required
-* What has already occurred
-* What remains outstanding
-* Whether the product record is ready for use
+from
 
-## Problem Boundaries
+**How COPI manages the work required to satisfy those requirements.**
 
-The initial COPI Onboarding module focuses on the process of bringing a new product record to a defined state of completeness.
+This would allow requirements and validation rules to change without rebuilding the core onboarding workflow.
 
-The initial scope does not attempt to solve every product-data or product-lifecycle problem.
+## Potential Role of AI
 
-Potential future capabilities such as ongoing monitoring, change management, and long-term product maintenance are intentionally separated from the initial onboarding problem.
+AI could reduce some of the manual effort involved in the process, particularly where information is unstructured.
 
-## Key Assumptions
+Potential opportunities include:
 
-The initial product concept assumes:
+* Interpreting vendor responses
+* Extracting information from documents
+* Identifying potential inconsistencies
+* Drafting requests and follow-ups
+* Suggesting what additional information may be needed
+* Helping match responses to outstanding requirements
 
-1. Product requirements can be represented as configurable rules.
-2. A product record can be evaluated against those requirements.
-3. Missing or invalid information can be identified.
-4. A responsible party can be associated with outstanding information.
-5. Vendors or other responsible parties can provide information in response to requests.
-6. Product records can be updated as information is received.
-7. The product can be re-evaluated after updates.
-8. A defined set of requirements can determine when onboarding is complete.
+AI should support the process while keeping requirements, decisions, and outcomes traceable.
 
-These assumptions should be validated as the product is further defined.
+## Initial Product Boundary
 
-## Desired Future State
+The initial problem being addressed is:
 
-A new product enters the onboarding process.
+> **How can we move a new product from incomplete intake to a defined state of completeness through a repeatable, traceable process?**
 
-COPI evaluates the product against its applicable requirements and identifies outstanding information.
+The first COPI module will focus on this onboarding problem.
 
-COPI communicates clear, actionable requests to the appropriate responsible party and records the request.
+Broader product lifecycle management is a future opportunity rather than part of the initial problem definition.
 
-When information is received, COPI evaluates the response, updates the onboarding state, and identifies any remaining gaps.
+## Assumptions to Validate
 
-The process continues until the product record meets its defined completion criteria.
+Several assumptions should be tested with users and stakeholders:
 
-The organization can then see both the current state of the product record and the history of how it reached that state.
+* Product requirements can be defined clearly enough to evaluate.
+* Different product types can use configurable requirements.
+* Missing or invalid information can be identified consistently.
+* Responsibility for outstanding information can be determined.
+* Vendors or other owners can provide responses through an appropriate process.
+* A meaningful definition of "complete" can be established.
+* Users will benefit from having the process and history in one place.
