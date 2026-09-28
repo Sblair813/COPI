@@ -1,76 +1,55 @@
 # COPI — Users & Stakeholders
 
-## Purpose
-
-COPI involves multiple participants in the product onboarding process.
-
-Not every participant is a direct user of the COPI platform. Some interact with the workflow externally, while others consume the resulting product information.
-
-Understanding these roles helps define product requirements without assuming that every stakeholder needs the same experience.
-
----
-
-## Primary Users
+## Primary User
 
 ### Product Operations
 
-**Role:** Primary operational user of COPI.
+Product Operations is the primary user of COPI Onboarding.
 
-Product Operations is responsible for ensuring that new product records are properly onboarded and ready for downstream use.
+They are responsible for moving products through the onboarding process and resolving information gaps.
 
-**Needs:**
+**What they need:**
 
-* Visibility into new products entering onboarding
-* Clear identification of missing information
-* Visibility into outstanding vendor requests
-* Ability to understand current onboarding status
-* Visibility into vendor responses
-* Ability to determine why an item is not complete
-* Access to onboarding history
-* Confidence that completion criteria have been satisfied
+* Visibility into what is missing
+* Clear ownership of outstanding requirements
+* Consistent requirements and validation
+* Easier vendor communication
+* Visibility into responses and follow-ups
+* A clear definition of when a product is complete
+* A history of what happened during onboarding
 
-**Primary outcome:**
+**Product goal:**
 
-Reduce manual coordination while maintaining control and visibility over product onboarding.
-
----
-
-## Secondary Users
-
-### Product Data or Master Data Teams
-
-**Role:** Maintains or governs product information.
-
-**Needs:**
-
-* Consistent product-data requirements
-* Data validation
-* Visibility into data-quality issues
-* Clear ownership of missing information
-* Traceability of changes
-* Consistent completion criteria
-
-**Primary outcome:**
-
-Improve the consistency and reliability of product information.
+Reduce the manual coordination required to move a product from incomplete to complete.
 
 ---
 
-### Business or Product Administrators
+## Other Internal Users
 
-**Role:** Defines or manages the rules that determine what is required for different types of products.
+### Product Data / Master Data
 
-**Needs:**
+These users are concerned with the quality and usability of product information.
 
-* Ability to define required information
-* Ability to configure validation rules
-* Ability to establish responsible parties
-* Ability to manage requirements by product type or context
-* Visibility into rule effectiveness
+**They need:**
 
-**Primary outcome:**
+* Consistent product information
+* Validation against defined requirements
+* Visibility into unresolved issues
+* Confidence that completed products have met the applicable requirements
 
-Maintain the business rules that determine product completeness without changing the core onboarding process.
+---
+
+### Business / Product Administrators
+
+These users may be responsible for defining or maintaining the requirements used by COPI.
+
+**They need:**
+
+* A way to define requirements
+* Ability to determine which requirements apply
+* Control over validation rules
+* Visibility into requirement changes
+* Appropriate governance around what constitutes "complete"
 
 ---
 
@@ -78,104 +57,47 @@ Maintain the business rules that determine product completeness without changing
 
 ### Vendors
 
-**Role:** External source of product information.
+Vendors or other product-information owners provide information needed to resolve outstanding requirements.
 
-Vendors may provide information needed to complete a product record.
-
-**Needs:**
+**They need:**
 
 * Clear requests
-* Specific identification of missing information
-* Understanding of required formats or documentation
-* Ability to provide responses efficiently
-* Visibility into outstanding requests
+* Specific information requirements
+* Easy-to-understand response instructions
+* Visibility into what is still needed
 * Reduced duplicate requests
 
-**Primary outcome:**
-
-Provide the required information with minimal ambiguity and unnecessary back-and-forth.
+COPI should make it easier for vendors to provide the right information rather than simply sending more follow-up messages.
 
 ---
 
 ## Downstream Consumers
 
-### Downstream Systems
+Other systems and business users may depend on the resulting product information.
 
-**Role:** Consume completed product records.
+They are not necessarily direct COPI users, but their needs influence the definition of a complete product.
 
-These may include enterprise applications, catalogs, operational systems, reporting systems, or other data consumers.
+**They need:**
 
-**Needs:**
-
-* Reliable product information
-* Consistent data structures
-* Defined completion criteria
-* Appropriate data quality
-* Timely availability of completed records
-
-**Primary outcome:**
-
-Receive product information that is sufficiently complete and reliable for its intended use.
+* Product information that satisfies the organization's requirements
+* Consistent data
+* Confidence that required information has been validated
 
 ---
 
-### Business Users
+# Stakeholder View
 
-**Role:** Use product information after onboarding.
-
-Depending on the organization, these may include operations, sales, purchasing, customer service, clinical, administrative, or other business functions.
-
-**Needs:**
-
-* Accessible product information
-* Confidence in data quality
-* Appropriate product attributes
-* Timely availability
-
-**Primary outcome:**
-
-Use product information without having to resolve the original onboarding problems themselves.
+| Stakeholder              | Primary Concern            | COPI Need                          |
+| ------------------------ | -------------------------- | ---------------------------------- |
+| Product Operations       | Getting products onboarded | Workflow, visibility, follow-up    |
+| Product Data             | Data quality               | Validation and completeness        |
+| Product Administrator    | Requirements               | Configuration and governance       |
+| Vendor                   | Providing information      | Clear requests and responses       |
+| Downstream Users/Systems | Using product data         | Reliable completed information     |
+| Management               | Operational visibility     | Status, trends, and accountability |
 
 ---
 
-## Stakeholder Summary
+# Important Product Question
 
-| Stakeholder                      | Relationship to COPI     | Primary Need                              |
-| -------------------------------- | ------------------------ | ----------------------------------------- |
-| Product Operations               | Primary user             | Manage onboarding efficiently             |
-| Product Data / Master Data       | Operational / governance | Maintain data quality                     |
-| Business / Product Administrator | Configuration            | Define requirements and rules             |
-| Vendor                           | External participant     | Provide missing information               |
-| Downstream Systems               | Consumer                 | Receive complete product records          |
-| Business Users                   | Consumer                 | Use reliable product information          |
-| Management                       | Oversight                | Understand process status and performance |
-
----
-
-## Stakeholder Principle
-
-COPI should not be designed around a single user's workflow.
-
-The product must balance:
-
-* Operational efficiency
-* Data integrity
-* Vendor usability
-* Business requirements
-* Downstream reliability
-* Traceability
-* Governance
-
-Improving one part of the process should not create unnecessary burden or risk elsewhere in the product lifecycle.
-
----
-
-## Key Product Question
-
-One of the most important questions to resolve during further product discovery is:
-
-> Who owns the definition of "complete"?
-
-COPI can identify whether a record satisfies defined requirements, but the organization must establish the authority and governance behind those requirements.
-
-This distinction separates the **COPI engine** from the **business rules it executes**.
+One of the most importan
