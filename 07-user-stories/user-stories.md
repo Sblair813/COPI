@@ -2,431 +2,182 @@
 
 ## Purpose
 
-This document translates the COPI Onboarding MVP into user-centered requirements.
+This document captures the **working draft of the initial user stories and acceptance criteria** for the COPI Onboarding MVP.
 
-User stories describe the desired capability from the perspective of the person or participant who benefits from it.
+These stories are intended to help clarify the user outcomes the product needs to support. They are not intended to represent every possible interaction or final system behavior.
 
-Acceptance criteria define the conditions that must be satisfied for the capability to be considered complete.
-
----
-
-# Epic 1 — Product Intake
-
-## US-001 — Submit a New Product
-
-**As a Product Operations user,**
-
-I want to submit a new product for onboarding,
-
-so that COPI can evaluate the product against its applicable requirements.
-
-### Acceptance Criteria
-
-* A new product can be submitted for onboarding.
-* The product receives a unique identifier.
-* The onboarding process is initiated.
-* Initial product information is associated with the onboarding record.
-* The onboarding start date is recorded.
-* The product receives an initial onboarding status.
+In a real product environment, these would be reviewed and refined with engineering, design, Product Operations, and other relevant stakeholders.
 
 ---
 
-# Epic 2 — Requirements Evaluation
+## Primary User
 
-## US-002 — Determine Applicable Requirements
+The primary MVP user is **Product Operations**, responsible for moving products through onboarding and resolving missing or incomplete information.
+
+Other users, including Product Administrators and vendors, interact with the process at specific points.
+
+---
+
+## User Stories
+
+### 1. Receive a Product
 
 **As a Product Operations user,**
+I want to bring a new product into COPI,
+so that I can begin the onboarding process.
 
+**Acceptance criteria:**
+
+* A product can be created or received in COPI.
+* Required product information is identified.
+* The product receives an onboarding status.
+* The user can see what information is currently available.
+
+---
+
+### 2. Determine What Is Required
+
+**As a Product Operations user,**
 I want COPI to determine which requirements apply to a product,
+so that I know what needs to be evaluated.
 
-so that the product is evaluated against the correct criteria.
+**Acceptance criteria:**
 
-### Acceptance Criteria
-
-* COPI identifies the product's applicable requirements.
-* Requirements can vary based on configured product characteristics.
-* The applicable requirements are associated with the onboarding record.
-* The requirements used for evaluation can be identified.
+* Requirements can be configured.
+* COPI identifies the applicable requirements for the product.
+* The user can see the requirements being evaluated.
+* Requirements can be updated as product or business rules change.
 
 ---
 
-## US-003 — Identify Missing Information
+### 3. Evaluate a Product
 
 **As a Product Operations user,**
+I want COPI to evaluate the available product information against applicable requirements,
+so that I can identify what is complete and what needs attention.
 
-I want COPI to identify missing required information,
+**Acceptance criteria:**
 
-so that I do not have to manually inspect every product record.
-
-### Acceptance Criteria
-
-* COPI evaluates the product against applicable requirements.
-* Missing required information is identified.
-* Each missing requirement is clearly described.
-* The missing requirement is associated with the product.
-* The responsible party is identified when known.
+* COPI evaluates available information against applicable requirements.
+* Requirements can be identified as satisfied, unsatisfied, or requiring review.
+* The user can understand why an item requires attention.
 
 ---
 
-## US-004 — Identify Invalid Information
+### 4. Identify and Manage Gaps
 
 **As a Product Operations user,**
+I want COPI to identify missing or invalid information,
+so that I know what needs to be resolved.
 
-I want COPI to identify information that does not satisfy defined validation rules,
+**Acceptance criteria:**
 
-so that incomplete or incorrect information is not treated as complete.
-
-### Acceptance Criteria
-
-* Configured validation rules are applied.
-* Information that fails validation is identified.
-* The failed requirement is identified.
-* The reason for the failure is available.
-* The product remains incomplete until the requirement is resolved.
+* Missing or invalid information is identified.
+* Outstanding items can be viewed together.
+* An owner can be associated with an outstanding item.
+* The status of an outstanding item can be tracked.
 
 ---
 
-# Epic 3 — Gap Management
-
-## US-005 — View Outstanding Requirements
+### 5. Request Missing Information
 
 **As a Product Operations user,**
+I want to create a request for missing information,
+so that the appropriate person or vendor knows what is needed.
 
-I want to see all unresolved product requirements,
+**Acceptance criteria:**
 
-so that I understand exactly what remains before the product can be completed.
-
-### Acceptance Criteria
-
-* Outstanding requirements are displayed.
-* Each requirement identifies its current status.
-* The responsible party is displayed when known.
-* Requirements that have already been resolved are distinguishable from outstanding requirements.
-* The list updates when requirements are resolved.
+* A request can be created from an outstanding requirement.
+* The request identifies the information needed.
+* The request can be associated with the product and outstanding requirement.
+* The user can see whether the request has been sent.
 
 ---
 
-## US-006 — Understand Why a Requirement Is Outstanding
+### 6. Process a Response
 
 **As a Product Operations user,**
+I want to record and process information received in response to a request,
+so that COPI can determine whether the outstanding requirement has been addressed.
 
-I want to understand why a requirement has not been satisfied,
+**Acceptance criteria:**
 
-so that I can determine the appropriate next action.
+* A response can be associated with the relevant product and request.
+* Information from the response can be captured or updated.
+* Partial responses can remain outstanding.
+* Responses requiring additional review can be identified.
 
-### Acceptance Criteria
-
-The system can distinguish, where applicable, between:
-
-* Missing information
-* Invalid information
-* Incomplete information
-* Missing documentation
-* Conflicting information
-* Information requiring additional verification
+**AI opportunity:**
+AI could assist with interpreting unstructured responses or extracting information from documents, with appropriate human review.
 
 ---
 
-# Epic 4 — Vendor Communication
-
-## US-007 — Generate a Vendor Request
+### 7. Revalidate the Product
 
 **As a Product Operations user,**
+I want COPI to re-evaluate the product after information changes,
+so that I know whether outstanding requirements have been resolved.
 
-I want COPI to generate a detailed request for outstanding information,
+**Acceptance criteria:**
 
-so that vendors receive clear and actionable instructions.
-
-### Acceptance Criteria
-
-The request includes, where applicable:
-
-* Product identification
-* Outstanding requirements
-* Required information
-* Required format
-* Supporting documentation requirements
-* Response instructions
-* Relevant deadlines or response expectations
+* Updated information can trigger or support revalidation.
+* Previously outstanding requirements are evaluated again.
+* New gaps can be identified.
+* The product remains in onboarding until applicable requirements are satisfied.
 
 ---
 
-## US-008 — Avoid Unnecessary Duplicate Requests
+### 8. Complete Onboarding
 
 **As a Product Operations user,**
+I want COPI to show when a product has satisfied its applicable requirements,
+so that I know onboarding is complete.
 
-I want COPI to consider previous requests and responses,
+**Acceptance criteria:**
 
-so that vendors are not repeatedly asked for information they have already provided.
-
-### Acceptance Criteria
-
-* Previous requests are available to the workflow.
-* Previous responses can be associated with requirements.
-* Resolved requirements are excluded from unnecessary subsequent requests.
-* Remaining requirements can be included in follow-up requests.
+* COPI determines completion based on applicable requirements.
+* The user can see what contributed to completion.
+* The product receives a completed status.
+* The onboarding history remains available after completion.
 
 ---
 
-# Epic 5 — Communication Tracking
+## Supporting Story — Product Administration
 
-## US-009 — Track Vendor Communications
-
-**As a Product Operations user,**
-
-I want COPI to maintain a history of vendor communications,
-
-so that I can understand what has been requested and when.
-
-### Acceptance Criteria
-
-Each communication records, where applicable:
-
-* Product
-* Recipient
-* Date and time
-* Requirements requested
-* Communication type
-* Communication status
-* Related onboarding event
-
----
-
-# Epic 6 — Vendor Response
-
-## US-010 — Process a Vendor Response
-
-**As a Product Operations user,**
-
-I want COPI to associate information received from a vendor with the appropriate product and requirements,
-
-so that the onboarding record can be updated accurately.
-
-### Acceptance Criteria
-
-* A vendor response can be associated with a product.
-* The response can be associated with one or more outstanding requirements.
-* Received information can be evaluated.
-* Resolved requirements are identified.
-* Unresolved requirements remain outstanding.
-
----
-
-## US-011 — Support Partial Responses
-
-**As a Product Operations user,**
-
-I want COPI to recognize when a vendor has provided only some of the requested information,
-
-so that unresolved requirements continue through the onboarding process.
-
-### Acceptance Criteria
-
-* COPI identifies which requirements were satisfied.
-* COPI identifies which requirements remain unresolved.
-* Resolved requirements are not unnecessarily requested again.
-* Remaining requirements remain active.
-* Additional communication can address only the remaining gaps.
-
----
-
-# Epic 7 — Revalidation
-
-## US-012 — Revalidate After Information Is Received
-
-**As a Product Operations user,**
-
-I want COPI to re-evaluate the product after information is received,
-
-so that completion is based on the current state of the entire product record.
-
-### Acceptance Criteria
-
-* Updated information triggers revalidation.
-* Applicable requirements are evaluated again.
-* Previously unresolved requirements are reassessed.
-* Newly identified issues can be added to the outstanding requirements.
-* The product cannot be marked complete until all applicable requirements are satisfied.
-
----
-
-# Epic 8 — Completion
-
-## US-013 — Complete a Product
-
-**As a Product Operations user,**
-
-I want COPI to identify when all applicable requirements have been satisfied,
-
-so that I know when the product is ready for downstream use.
-
-### Acceptance Criteria
-
-* All applicable requirements have been evaluated.
-* All required information satisfies validation criteria.
-* Required documentation has been satisfied where applicable.
-* No unresolved required requirements remain.
-* COPI marks the onboarding process complete.
-* The completion event is recorded.
-
----
-
-# Epic 9 — Status Visibility
-
-## US-014 — View Current Onboarding Status
-
-**As a Product Operations user,**
-
-I want to see the current status of a product,
-
-so that I can quickly understand where it is in the onboarding process.
-
-### Acceptance Criteria
-
-The status provides visibility into states such as:
-
-* New
-* Evaluating
-* Incomplete
-* Awaiting Response
-* Response Received
-* Revalidation
-* Complete
-
-The final status model will be defined during detailed workflow design.
-
----
-
-## US-015 — Identify Who Owns Outstanding Work
-
-**As a Product Operations user,**
-
-I want to know who is responsible for unresolved requirements,
-
-so that outstanding work can be directed to the appropriate party.
-
-### Acceptance Criteria
-
-* Outstanding requirements identify an owner when known.
-* Ownership can differ between requirements.
-* Ownership is visible to authorized users.
-* Ownership changes are traceable.
-
----
-
-# Epic 10 — Auditability
-
-## US-016 — View Product Onboarding History
-
-**As a Product Operations user,**
-
-I want to see the history of a product's onboarding process,
-
-so that I can understand how the product reached its current state.
-
-### Acceptance Criteria
-
-The history includes relevant events such as:
-
-* Product intake
-* Requirement evaluation
-* Identified gaps
-* Vendor requests
-* Vendor responses
-* Product updates
-* Validation results
-* Status changes
-* Completion
-* Authorized exceptions
-
----
-
-# Epic 11 — Exception Handling
-
-## US-017 — Handle an Unresolved Requirement
-
-**As a Product Operations user,**
-
-I want COPI to identify requirements that remain unresolved after normal vendor communication,
-
-so that exceptions can be handled through an appropriate process.
-
-### Acceptance Criteria
-
-* The unresolved requirement remains visible.
-* Previous communication history is available.
-* The responsible party is visible when known.
-* The requirement can be escalated or routed according to configured business rules.
-* Any authorized exception decision is recorded.
-
----
-
-# Cross-Functional User Story
-
-## US-018 — Maintain Configurable Requirements
+### 9. Configure Requirements
 
 **As a Product Administrator,**
+I want to manage the requirements used during onboarding,
+so that COPI can support different product types and business rules.
 
-I want to configure product requirements and validation rules,
+**Acceptance criteria:**
 
-so that COPI can support different product types and business contexts without changing the core onboarding workflow.
-
-### Acceptance Criteria
-
-* Requirements can be defined.
-* Requirements can be associated with applicable product contexts.
-* Validation criteria can be defined.
-* Responsible parties can be defined.
-* Requirement changes can be managed through an appropriate governance process.
-* The onboarding workflow remains independent of industry-specific requirements.
+* Requirements can be added or updated.
+* Requirements can be associated with applicable product types or conditions.
+* Changes to requirements are traceable.
+* The product team can distinguish current requirements from previous versions where needed.
 
 ---
 
-# Vendor Experience
+## Working Notes
 
-## US-019 — Receive a Clear Request
+These stories intentionally leave some implementation details open.
 
-**As a vendor,**
+Questions to refine collaboratively include:
 
-I want requests to clearly identify what information is required and how I should provide it,
+* What constitutes a valid response?
+* Which requirements can be evaluated automatically?
+* Where is human review required?
+* When should AI be used versus deterministic rules?
+* What happens when information conflicts?
+* Who is authorized to approve an exception?
+* What communication methods are supported initially?
+* What information must be retained for audit/history?
 
-so that I can respond accurately without unnecessary back-and-forth.
+## MVP Product Loop
 
-### Acceptance Criteria
+The stories support the core COPI onboarding loop:
 
-* The product is clearly identified.
-* Each outstanding requirement is clearly described.
-* Required formats are communicated when applicable.
-* Documentation requirements are identified.
-* Response instructions are clear.
-* Previously resolved requirements are not unnecessarily included.
+**Receive → Evaluate → Identify → Request → Receive Response → Revalidate → Complete**
 
----
-
-# Product Integrity Principle
-
-Across all user stories, COPI should maintain one fundamental principle:
-
-> Receiving information is not the same as satisfying a requirement.
-
-Information must be evaluated against the applicable requirements before COPI considers the requirement resolved.
-
----
-
-# Definition of Done — Onboarding Loop
-
-The COPI Onboarding MVP can be considered functionally complete when a representative product can:
-
-1. Enter onboarding.
-2. Receive applicable requirements.
-3. Be evaluated against those requirements.
-4. Have missing or invalid information identified.
-5. Generate an actionable request.
-6. Record the request.
-7. Receive a response.
-8. Process a complete or partial response.
-9. Revalidate the product.
-10. Generate additional requests when necessary.
-11. Continue until all applicable requirements are satisfied.
-12. Reach a documented completion state.
-13. Preserve the history of the onboarding process.
+The goal of the MVP is not to automate every step. The goal is to prove that COPI can provide a repeatable and traceable way to move a product through onboarding.
