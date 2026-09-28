@@ -1,6 +1,6 @@
 # COPI — Product Vision
 
-## Product
+## Product 
 
 **COPI — Core Product Integrity**
 
