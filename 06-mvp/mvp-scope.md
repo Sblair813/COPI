@@ -1,313 +1,300 @@
-# COPI Onboarding — MVP Scope
+# COPI Onboarding — MVP Requirements
 
 ## Purpose
 
-The COPI Onboarding MVP establishes the smallest meaningful version of the product that can demonstrate the core onboarding automation loop.
+This document captures the **working draft of the initial product requirements** for the COPI Onboarding MVP.
 
-The MVP is not intended to represent the complete future COPI platform.
+These requirements represent the current product thinking and are intended to establish the product behavior and outcomes needed for an initial version.
 
-Its purpose is to prove that COPI can take an incomplete product record, identify what is missing, coordinate resolution, re-evaluate the record, and determine when onboarding is complete.
+They are **not final technical or implementation requirements**. In a real product environment, these would be reviewed and refined collaboratively with engineering, design, Product Operations, and other relevant stakeholders.
+
+## Working Draft
+
+The requirements in this document are intended to provide a starting point for product and engineering discussions.
+
+Some details are intentionally left open because the right solution would depend on:
+
+* Existing systems and data
+* Technical constraints
+* Business rules
+* User workflows
+* Integration requirements
+* Security and compliance considerations
+* Feedback from users and stakeholders
+
+The goal at this stage is to define **what the product needs to accomplish**, rather than prescribe exactly **how it should be built**.
 
 ---
 
-# MVP Outcome
-
-The MVP must support this fundamental lifecycle:
-
-**Receive → Evaluate → Identify → Request → Receive Response → Re-evaluate → Complete**
-
-The MVP is successful when this loop can operate reliably for a defined set of product requirements and a defined vendor communication process.
-
----
-
-# MVP Capabilities
+# MVP Requirement Areas
 
 ## 1. Product Intake
 
-### Included
+COPI needs to accept a new product into the onboarding process.
 
-* Create or receive a new product record
-* Assign a unique product identifier
-* Initiate onboarding
-* Record initial product information
-* Record the onboarding start date
+**The MVP should:**
 
-### Why it matters
+* Create or receive a product record.
+* Establish a unique product identifier.
+* Start an onboarding process for the product.
+* Capture the information available at intake.
+* Record the initial onboarding status.
 
-COPI cannot evaluate or manage a product until it has entered the onboarding process.
+**Questions for collaboration:**
 
----
-
-## 2. Configurable Requirements
-
-### Included
-
-* Define required product attributes
-* Define requirements by product type or category
-* Identify required fields
-* Identify required documentation
-* Define basic validation rules
-* Identify the responsible party for a requirement
-
-### Why it matters
-
-The onboarding engine must be independent of a single industry's requirements.
+* What information is required at intake?
+* Where does the product originate?
+* Which existing systems are involved?
 
 ---
 
-## 3. Completeness Validation
+## 2. Applicable Requirements
 
-### Included
+COPI needs to determine what requirements apply to a product.
 
-COPI must be able to identify:
+**The MVP should:**
+
+* Support configurable requirements.
+* Associate requirements with applicable product characteristics or contexts.
+* Identify the requirements being used to evaluate a product.
+* Keep requirement definitions separate from the onboarding workflow.
+
+**Questions for collaboration:**
+
+* Who owns the requirements?
+* Where should they be maintained?
+* How are changes to requirements governed?
+
+---
+
+## 3. Product Evaluation
+
+COPI needs to evaluate the product against its applicable requirements.
+
+The MVP should be able to identify:
 
 * Missing information
 * Incomplete information
 * Invalid information
 * Missing required documentation
 
-### Why it matters
+The specific validation rules would be defined with the appropriate business stakeholders and engineering.
 
-This is the foundation of the product's integrity function.
+**Questions for collaboration:**
+
+* Which validations can be deterministic?
+* Where might AI be useful?
+* Which situations require human review?
 
 ---
 
-## 4. Gap Identification
+## 4. Gap Management
 
-### Included
+COPI needs to make outstanding requirements visible and actionable.
 
-COPI must create a structured representation of outstanding requirements.
+For each outstanding requirement, the MVP should provide enough information to understand:
 
-Each gap should include, where applicable:
+* What is missing or incorrect
+* Which requirement is affected
+* Who is responsible for providing or resolving it
+* What action or information is needed
 
-* Product
-* Requirement
-* Current state
-* Reason unresolved
-* Responsible party
-* Status
+**Question for collaboration:**
 
-### Why it matters
-
-The system must convert an incomplete record into actionable work.
+What information does a Product Operations user need in order to act on a gap without additional investigation?
 
 ---
 
 ## 5. Vendor Communication
 
-### Included
+COPI needs to support requests for outstanding information.
 
-COPI must generate a clear request for outstanding information.
+**The MVP should:**
 
-The request should include:
+* Generate a request based on outstanding requirements.
+* Identify the product.
+* Identify what information is needed.
+* Provide appropriate response instructions.
+* Record that the request was made.
 
-* Product identification
-* Missing requirements
-* Required format or guidance
-* Response instructions
-* Relevant supporting documentation requirements
+AI may assist with drafting or organizing requests, but the requirement behind the request should remain visible.
 
-### Why it matters
+**Questions for collaboration:**
 
-Identifying a problem without coordinating its resolution does not solve the onboarding problem.
+* Which requests should be automated?
+* Which require human review?
+* What communication channel should be supported first?
 
 ---
 
-## 6. Communication Logging
+## 6. Communication Tracking
 
-### Included
+COPI needs to maintain enough communication history to understand the onboarding process.
 
-COPI must record each onboarding communication.
+The MVP should capture, where appropriate:
 
-The MVP should capture:
+* What was requested
+* Who received the request
+* When it was sent
+* Which requirements were involved
+* Whether a response was received
 
-* Date/time
-* Product
-* Recipient
-* Request
-* Communication status
-* Related requirements
-
-### Why it matters
-
-Communication history is necessary for visibility and accountability.
+The exact communication model would be refined during solution design.
 
 ---
 
 ## 7. Response Processing
 
-### Included
+COPI needs to process information received in response to an outstanding requirement.
 
-COPI must support:
+The MVP should support:
 
-* Receipt of vendor information
-* Association of information with the appropriate product
-* Association of information with outstanding requirements
+* Complete responses
 * Partial responses
-* Validation of received information
+* Responses that fail validation
+* Responses that do not resolve the original requirement
 
-### Why it matters
+Receiving a response should not automatically mark a requirement as complete.
 
-A vendor response cannot automatically be treated as a successful resolution.
+**Questions for collaboration:**
+
+* How should unstructured responses be handled?
+* Where could AI assist?
+* When should a person review a response?
 
 ---
 
 ## 8. Revalidation
 
-### Included
+COPI needs to evaluate the product again after relevant information changes.
 
-COPI must re-evaluate the product after relevant information is received.
+The MVP should:
 
-The system must determine:
+* Re-evaluate applicable requirements.
+* Recognize requirements that are now satisfied.
+* Keep unresolved requirements active.
+* Identify newly discovered issues when appropriate.
 
-* Which requirements are now satisfied
-* Which requirements remain outstanding
-* Whether additional communication is required
+**Question for collaboration:**
 
-### Why it matters
-
-This is what turns COPI into a continuous onboarding process rather than a one-time request system.
+What events should trigger revalidation?
 
 ---
 
 ## 9. Completion
 
-### Included
+COPI needs to determine when a product has satisfied its applicable onboarding requirements.
 
-COPI must:
+A product should only be marked complete when:
 
-* Determine whether all applicable requirements are satisfied
-* Mark the product complete
-* Record the completion event
-* Preserve the relevant onboarding history
+* Applicable requirements have been evaluated.
+* Required information satisfies the relevant validation criteria.
+* Required documentation has been satisfied where applicable.
+* No unresolved required requirements remain.
 
-### Why it matters
+The definition of "complete" must be established by the business owner of the applicable requirements.
 
-The system needs an objective endpoint for the onboarding process.
+**Key product question:**
+
+> Who owns the definition of "complete"?
 
 ---
 
-## 10. Basic Status Visibility
+## 10. Status & History
 
-### Included
+COPI needs to provide basic visibility into the current onboarding state and what has happened.
 
-Users must be able to determine:
+The MVP should provide visibility into:
 
 * Current onboarding status
 * Outstanding requirements
-* Responsible party
-* Outstanding requests
-* Recent activity
+* Requests and responses
+* Relevant status changes
+* Completion
 
-### Why it matters
-
-Automation should improve visibility, not create a black box.
+A more detailed audit and reporting model can evolve beyond the MVP.
 
 ---
 
 # MVP Workflow
 
-The MVP supports the following loop:
+The requirements support the following core loop:
 
-```text
-             NEW PRODUCT
-                  |
-                  v
-          DETERMINE REQUIREMENTS
-                  |
-                  v
-              VALIDATE
-                  |
-          +-------+-------+
-          |               |
-       COMPLETE        INCOMPLETE
-          |               |
-          v               v
-       COMPLETE      IDENTIFY GAPS
-                          |
-                          v
-                   CREATE REQUEST
-                          |
-                          v
-                    SEND + LOG
-                          |
-                          v
-                    RECEIVE DATA
-                          |
-                          v
-                     VALIDATE
-                          |
-                          v
-                    UPDATE RECORD
-                          |
-                          v
-                     REVALIDATE
-                          |
-                  +-------+-------+
-                  |               |
-               COMPLETE       STILL MISSING
-                  |               |
-                  v               |
-               COMPLETE <---------+
-```
+**Receive → Evaluate → Identify → Request → Receive Response → Revalidate → Complete**
+
+If requirements remain unresolved, the process continues rather than prematurely marking the product complete.
 
 ---
 
-# Explicitly Out of MVP
+# Non-Functional Considerations
 
-The following capabilities are recognized as valuable but are not required to demonstrate the initial product concept.
+These are areas to discuss with engineering rather than finalized technical requirements.
 
-## Advanced AI
+### Traceability
 
-* AI-generated requirement interpretation
-* AI document extraction
-* AI response interpretation
-* AI-based conflict resolution
+Users should be able to understand why a requirement is outstanding or considered satisfied.
 
-## Advanced Communication
+### Accountability
 
+Actions and decisions should be attributable to the appropriate user, process, or system.
+
+### Configurability
+
+Requirements should be changeable without redesigning the core onboarding workflow.
+
+### Auditability
+
+Important onboarding events should be retained so the history of the process can be understood.
+
+### AI Transparency
+
+Where AI contributes to evaluating or processing information, users should be able to understand the role AI played and retain appropriate human oversight.
+
+---
+
+# Open Product Questions
+
+These questions would be explored through discovery and collaboration rather than assumed in the initial requirements:
+
+* Where should product requirements be maintained?
+* Who owns requirement changes?
+* What constitutes a valid response?
+* Which validations can be automated?
+* Where should human review be required?
+* Which communication channel should be supported first?
+* How should conflicting information be handled?
+* What happens when a vendor does not respond?
+* Who can approve an exception?
+* What information must be retained for audit purposes?
+* Where can AI reduce manual effort without creating unacceptable risk?
+
+---
+
+# MVP Boundary
+
+The MVP is intended to prove the core onboarding process, not solve every product-information problem.
+
+### In Scope
+
+* Product intake
+* Configurable requirements
+* Product evaluation
+* Gap identification
+* Vendor requests
+* Communication tracking
+* Response processing
+* Revalidation
+* Completion
+* Basic status and history
+
+### Not Yet Defined for MVP
+
+* Advanced AI automation
+* Complex integrations
 * Multiple communication channels
-* Vendor portal
-* SMS
-* Chat integrations
-* Complex communication orchestration
+* Advanced analytics
+* Predictive capabilities
+* Full product lifecycle management
+* Automated conflict resolution
 
-## Advanced Integrations
-
-* Enterprise product-management platforms
-* ERP integrations
-* Master-data platforms
-* External regulatory systems
-* Complex API ecosystems
-
-## Advanced Analytics
-
-* Vendor performance scoring
-* Predictive onboarding analytics
-* Advanced operational dashboards
-* Benchmarking
-
-## Advanced Lifecycle Management
-
-* Continuous product monitoring
-* Product change detection
-* Product retirement
-* Product lifecycle governance
-
-These capabilities may become future COPI modules or extensions.
-
----
-
-# MVP Success Criteria
-
-The MVP should demonstrate that COPI can:
-
-1. Accept a new product.
-2. Determine the requirements that apply.
-3. Identify missing or invalid information.
-4. Create actionable vendor requests.
-5. Record communications.
-6. Receive and process responses.
-7. Support partial responses.
-8. Revalidate the product.
-9. Continue requesting u
+These may become future product opportunities as the core workflow is validated.
