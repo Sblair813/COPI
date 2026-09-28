@@ -1,287 +1,300 @@
-# COPI Onboarding — Product Requirements
+# COPI Onboarding — MVP Requirements
 
 ## Purpose
 
-This document defines the functional requirements for the initial COPI Onboarding module.
+This document captures the **working draft of the initial product requirements** for the COPI Onboarding MVP.
 
-The requirements describe what COPI must be capable of doing without prescribing a specific technical implementation.
+These requirements represent the current product thinking and are intended to establish the product behavior and outcomes needed for an initial version.
 
----
+They are **not final technical or implementation requirements**. In a real product environment, these would be reviewed and refined collaboratively with engineering, design, Product Operations, and other relevant stakeholders.
 
-# 1. Product Intake
+## Working Draft
 
-### REQ-001 — Receive New Product
+The requirements in this document are intended to provide a starting point for product and engineering discussions.
 
-COPI shall support the creation or receipt of a new product record for onboarding.
+Some details are intentionally left open because the right solution would depend on:
 
-### REQ-002 — Create Onboarding Record
+* Existing systems and data
+* Technical constraints
+* Business rules
+* User workflows
+* Integration requirements
+* Security and compliance considerations
+* Feedback from users and stakeholders
 
-COPI shall create an onboarding record associated with each new product entering the onboarding process.
-
-### REQ-003 — Preserve Product Identity
-
-COPI shall maintain a unique identifier for each product throughout the onboarding process.
-
-### REQ-004 — Record Intake Information
-
-COPI shall record relevant information about when, how, and from whom the product was submitted.
+The goal at this stage is to define **what the product needs to accomplish**, rather than prescribe exactly **how it should be built**.
 
 ---
 
-# 2. Requirements Management
+# MVP Requirement Areas
 
-### REQ-005 — Determine Applicable Requirements
+## 1. Product Intake
 
-COPI shall determine which requirements apply to a product based on configured business rules.
+COPI needs to accept a new product into the onboarding process.
 
-### REQ-006 — Support Configurable Requirements
+**The MVP should:**
 
-COPI shall allow applicable product requirements to be defined without changing the core onboarding workflow.
+* Create or receive a product record.
+* Establish a unique product identifier.
+* Start an onboarding process for the product.
+* Capture the information available at intake.
+* Record the initial onboarding status.
 
-### REQ-007 — Support Requirement Ownership
+**Questions for collaboration:**
 
-COPI shall allow a requirement to identify the party responsible for providing or resolving the information.
-
-### REQ-008 — Support Validation Rules
-
-COPI shall support validation criteria associated with applicable requirements.
-
-### REQ-009 — Support Required Documentation
-
-COPI shall support requirements that depend on documentation or supporting evidence.
+* What information is required at intake?
+* Where does the product originate?
+* Which existing systems are involved?
 
 ---
 
-# 3. Product Validation
+## 2. Applicable Requirements
 
-### REQ-010 — Validate Product Records
+COPI needs to determine what requirements apply to a product.
 
-COPI shall evaluate product records against applicable requirements.
+**The MVP should:**
 
-### REQ-011 — Identify Missing Information
+* Support configurable requirements.
+* Associate requirements with applicable product characteristics or contexts.
+* Identify the requirements being used to evaluate a product.
+* Keep requirement definitions separate from the onboarding workflow.
 
-COPI shall identify information that is required but not present.
+**Questions for collaboration:**
 
-### REQ-012 — Identify Incomplete Information
-
-COPI shall identify information that is present but does not satisfy the applicable requirement.
-
-### REQ-013 — Identify Invalid Information
-
-COPI shall identify information that fails its defined validation criteria.
-
-### REQ-014 — Identify Conflicting Information
-
-COPI shall be capable of identifying information that conflicts with another applicable source or requirement.
-
-### REQ-015 — Identify Outstanding Documentation
-
-COPI shall identify required documentation that has not been received or validated.
+* Who owns the requirements?
+* Where should they be maintained?
+* How are changes to requirements governed?
 
 ---
 
-# 4. Gap Management
+## 3. Product Evaluation
 
-### REQ-016 — Create Data Gap
+COPI needs to evaluate the product against its applicable requirements.
 
-COPI shall create a structured record for each unresolved requirement.
+The MVP should be able to identify:
 
-### REQ-017 — Describe the Gap
+* Missing information
+* Incomplete information
+* Invalid information
+* Missing required documentation
 
-Each data gap shall identify the requirement that remains unresolved and the reason it has not been satisfied.
+The specific validation rules would be defined with the appropriate business stakeholders and engineering.
 
-### REQ-018 — Identify Responsible Party
+**Questions for collaboration:**
 
-Each unresolved requirement shall identify the party responsible for resolution when that information is available.
-
-### REQ-019 — Track Gap Status
-
-COPI shall maintain the status of each outstanding requirement.
-
-### REQ-020 — Track Gap History
-
-COPI shall preserve the history of changes associated with each unresolved requirement.
+* Which validations can be deterministic?
+* Where might AI be useful?
+* Which situations require human review?
 
 ---
 
-# 5. Vendor Communication
+## 4. Gap Management
 
-### REQ-021 — Generate Communication
+COPI needs to make outstanding requirements visible and actionable.
 
-COPI shall generate a communication based on the outstanding requirements associated with a product.
+For each outstanding requirement, the MVP should provide enough information to understand:
 
-### REQ-022 — Provide Specific Requests
+* What is missing or incorrect
+* Which requirement is affected
+* Who is responsible for providing or resolving it
+* What action or information is needed
 
-Generated communications shall identify the specific information or documentation required.
+**Question for collaboration:**
 
-### REQ-023 — Provide Response Guidance
-
-Generated communications shall provide sufficient guidance for the recipient to provide an actionable response.
-
-### REQ-024 — Reference Product
-
-Each communication shall clearly identify the product associated with the request.
-
-### REQ-025 — Group Related Requirements
-
-COPI should be capable of grouping multiple outstanding requirements into an appropriate communication rather than unnecessarily generating separate requests.
-
-### REQ-026 — Track Communication
-
-COPI shall record each communication associated with the onboarding process.
+What information does a Product Operations user need in order to act on a gap without additional investigation?
 
 ---
 
-# 6. Response Management
+## 5. Vendor Communication
 
-### REQ-027 — Receive Vendor Response
+COPI needs to support requests for outstanding information.
 
-COPI shall support the receipt of information from a responsible party.
+**The MVP should:**
 
-### REQ-028 — Associate Response With Product
+* Generate a request based on outstanding requirements.
+* Identify the product.
+* Identify what information is needed.
+* Provide appropriate response instructions.
+* Record that the request was made.
 
-COPI shall associate a response with the appropriate product and onboarding process.
+AI may assist with drafting or organizing requests, but the requirement behind the request should remain visible.
 
-### REQ-029 — Associate Response With Requirements
+**Questions for collaboration:**
 
-COPI shall determine which outstanding requirements a response is intended to address.
-
-### REQ-030 — Support Partial Responses
-
-COPI shall support responses that resolve some but not all outstanding requirements.
-
-### REQ-031 — Validate Responses
-
-COPI shall evaluate received information against the applicable validation criteria.
-
-### REQ-032 — Identify Unresolved Responses
-
-COPI shall identify information that remains unresolved after a response is received.
+* Which requests should be automated?
+* Which require human review?
+* What communication channel should be supported first?
 
 ---
 
-# 7. Revalidation
+## 6. Communication Tracking
 
-### REQ-033 — Revalidate After Update
+COPI needs to maintain enough communication history to understand the onboarding process.
 
-COPI shall re-evaluate the product after relevant information is received or updated.
+The MVP should capture, where appropriate:
 
-### REQ-034 — Recalculate Outstanding Requirements
+* What was requested
+* Who received the request
+* When it was sent
+* Which requirements were involved
+* Whether a response was received
 
-COPI shall determine the remaining unresolved requirements after revalidation.
-
-### REQ-035 — Prevent Premature Completion
-
-COPI shall not mark a product complete solely because a response was received.
-
-Completion shall depend on satisfaction of applicable requirements.
+The exact communication model would be refined during solution design.
 
 ---
 
-# 8. Completion
+## 7. Response Processing
 
-### REQ-036 — Determine Completion
+COPI needs to process information received in response to an outstanding requirement.
 
-COPI shall determine whether all applicable onboarding requirements have been satisfied.
+The MVP should support:
 
-### REQ-037 — Mark Product Complete
+* Complete responses
+* Partial responses
+* Responses that fail validation
+* Responses that do not resolve the original requirement
 
-COPI shall mark the onboarding process complete when defined completion criteria are satisfied.
+Receiving a response should not automatically mark a requirement as complete.
 
-### REQ-038 — Record Completion
+**Questions for collaboration:**
 
-COPI shall record when and why the product was determined to be complete.
-
-### REQ-039 — Preserve Completion History
-
-COPI shall preserve the relevant onboarding history associated with completion.
-
----
-
-# 9. Follow-Up
-
-### REQ-040 — Identify Outstanding Requests
-
-COPI shall identify requests that remain unresolved.
-
-### REQ-041 — Support Follow-Up
-
-COPI shall support follow-up communication for unresolved requirements.
-
-### REQ-042 — Avoid Duplicate Requests
-
-COPI should consider previous requests and responses before generating another request.
-
-### REQ-043 — Track Follow-Up History
-
-COPI shall maintain a history of follow-up communications.
+* How should unstructured responses be handled?
+* Where could AI assist?
+* When should a person review a response?
 
 ---
 
-# 10. Auditability
+## 8. Revalidation
 
-### REQ-044 — Maintain Activity History
+COPI needs to evaluate the product again after relevant information changes.
 
-COPI shall maintain a chronological history of significant onboarding events.
+The MVP should:
 
-### REQ-045 — Record Data Source
+* Re-evaluate applicable requirements.
+* Recognize requirements that are now satisfied.
+* Keep unresolved requirements active.
+* Identify newly discovered issues when appropriate.
 
-Where applicable, COPI shall identify the source associated with received product information.
+**Question for collaboration:**
 
-### REQ-046 — Record Communication History
-
-COPI shall maintain the history of communications associated with onboarding.
-
-### REQ-047 — Record Status Changes
-
-COPI shall maintain the history of significant onboarding status changes.
-
-### REQ-048 — Provide Traceability
-
-COPI shall allow authorized users to understand how a product progressed from intake to completion.
+What events should trigger revalidation?
 
 ---
 
-# 11. Status Visibility
+## 9. Completion
 
-### REQ-049 — Display Current Status
+COPI needs to determine when a product has satisfied its applicable onboarding requirements.
 
-COPI shall provide a current onboarding status for each product.
+A product should only be marked complete when:
 
-### REQ-050 — Display Outstanding Work
+* Applicable requirements have been evaluated.
+* Required information satisfies the relevant validation criteria.
+* Required documentation has been satisfied where applicable.
+* No unresolved required requirements remain.
 
-COPI shall identify outstanding requirements associated with an incomplete product.
+The definition of "complete" must be established by the business owner of the applicable requirements.
 
-### REQ-051 — Display Responsibility
+**Key product question:**
 
-COPI shall identify who is responsible for resolving outstanding requirements when known.
-
-### REQ-052 — Display Request Status
-
-COPI shall provide visibility into outstanding and completed communications.
+> Who owns the definition of "complete"?
 
 ---
 
-# 12. Exception Handling
+## 10. Status & History
 
-### REQ-053 — Support Non-Responsive Vendors
+COPI needs to provide basic visibility into the current onboarding state and what has happened.
 
-COPI shall support products where the responsible party does not respond.
+The MVP should provide visibility into:
 
-### REQ-054 — Support Partial Resolution
+* Current onboarding status
+* Outstanding requirements
+* Requests and responses
+* Relevant status changes
+* Completion
 
-COPI shall support products where only some requirements are resolved.
+A more detailed audit and reporting model can evolve beyond the MVP.
 
-### REQ-055 — Support Invalid Responses
+---
 
-COPI shall support responses that fail defined validation criteria.
+# MVP Workflow
 
-### REQ-056 — Support Conflicting Information
+The requirements support the following core loop:
 
-COPI shall support situations where information from different sources conflicts.
+**Receive → Evaluate → Identify → Request → Receive Response → Revalidate → Complete**
 
-### REQ-057 — Support Exceptions
+If requirements remain unresolved, the process continues rather than prematurely marking the product complete.
 
-COPI should support an authorized process for resolving requirements that cannot be satisfied through the standard workflow.
+---
 
-### REQ-058 —
+# Non-Functional Considerations
+
+These are areas to discuss with engineering rather than finalized technical requirements.
+
+### Traceability
+
+Users should be able to understand why a requirement is outstanding or considered satisfied.
+
+### Accountability
+
+Actions and decisions should be attributable to the appropriate user, process, or system.
+
+### Configurability
+
+Requirements should be changeable without redesigning the core onboarding workflow.
+
+### Auditability
+
+Important onboarding events should be retained so the history of the process can be understood.
+
+### AI Transparency
+
+Where AI contributes to evaluating or processing information, users should be able to understand the role AI played and retain appropriate human oversight.
+
+---
+
+# Open Product Questions
+
+These questions would be explored through discovery and collaboration rather than assumed in the initial requirements:
+
+* Where should product requirements be maintained?
+* Who owns requirement changes?
+* What constitutes a valid response?
+* Which validations can be automated?
+* Where should human review be required?
+* Which communication channel should be supported first?
+* How should conflicting information be handled?
+* What happens when a vendor does not respond?
+* Who can approve an exception?
+* What information must be retained for audit purposes?
+* Where can AI reduce manual effort without creating unacceptable risk?
+
+---
+
+# MVP Boundary
+
+The MVP is intended to prove the core onboarding process, not solve every product-information problem.
+
+### In Scope
+
+* Product intake
+* Configurable requirements
+* Product evaluation
+* Gap identification
+* Vendor requests
+* Communication tracking
+* Response processing
+* Revalidation
+* Completion
+* Basic status and history
+
+### Not Yet Defined for MVP
+
+* Advanced AI automation
+* Complex integrations
+* Multiple communication channels
+* Advanced analytics
+* Predictive capabilities
+* Full product lifecycle management
+* Automated conflict resolution
+
+These may become future product opportunities as the core workflow is validated.
