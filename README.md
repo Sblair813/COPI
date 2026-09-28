@@ -1,89 +1,115 @@
-# COPI
-Product Onboarding Tool- Core Onboarding Product Integrity
-# COPI — Core Onboarding Product Integrity
+# COPI — Core Product Integrity
 
-## Automated Product Onboarding & Data Integrity
+COPI is a product integrity concept focused on making product onboarding and product information management more consistent, traceable, and manageable.
 
-COPI is an industry-agnostic product onboarding framework designed to ensure that new product records are complete, accurate, and ready for downstream use.
+The initial module is **COPI Onboarding**.
 
-COPI identifies missing, incomplete, invalid, or unresolved product information; coordinates resolution with vendors or other responsible parties; and maintains a complete history of the onboarding process until the product record reaches completion.
+COPI is designed to combine structured business rules and workflow with AI where AI can reduce manual effort, interpret information, and help move work forward.
 
 ## The Problem
 
-New product records frequently arrive with missing or incomplete information.
+When a new product enters an organization, the information needed to make that product usable is often incomplete or inconsistent.
 
-Today, resolving those gaps can require manual effort to:
+Product teams may have to:
 
-* Identify what information is missing
-* Determine who needs to provide it
-* Contact vendors
-* Explain exactly what is required
-* Track responses
-* Update product records
-* Follow up on incomplete responses
-* Determine when the record is truly complete
-* Maintain a history of the process
+* Determine what information is required
+* Identify what is missing or invalid
+* Contact the appropriate vendor or owner
+* Follow up on outstanding information
+* Review responses
+* Update the product record
+* Recheck the information
+* Determine whether the product is complete
 
-This can create delays, inconsistent processes, repeated work, and limited visibility into onboarding status.
+This can become a manual and repetitive process, particularly when the requirements vary by product type.
 
 ## The COPI Concept
 
-COPI creates an automated, repeatable process for moving a new product record from intake to completion. 
-*Future state- TBD
+COPI is intended to provide a structured process for managing product information and the work required to bring it to an acceptable state.
 
-**New Item → Validate → Identify Gaps → Communicate → Receive → Update → Revalidate → Complete**
+For onboarding, the basic loop is:
 
-The process continues until the product record satisfies its defined requirements.
+**Receive → Evaluate → Identify Gaps → Request → Receive Response → Revalidate → Complete**
 
-## Industry-Agnostic by Design
+The process repeats when information is still missing, incomplete, or does not satisfy the applicable requirements.
 
-COPI is based on the principle that the core onboarding problem is not industry-specific.
+## Where AI Fits
 
-A product may be:
+AI is an important part of the COPI vision.
 
-* A healthcare product
-* A health and wellness product
-* Office furniture
-* A consumer product
-* An industrial product
-* A retail product
+Potential uses include:
 
-The core onboarding process remains consistent.
+* Interpreting unstructured vendor responses
+* Extracting product information from documents
+* Identifying potential inconsistencies or conflicts
+* Drafting specific vendor requests
+* Suggesting follow-up questions
+* Helping determine whether a response addresses a requirement
+* Identifying recurring information problems
 
-Industry-specific requirements can be introduced as configurable rules rather than embedded in the core product.
+AI would support the workflow rather than replace the underlying business rules, validation, accountability, or audit history.
 
-## Core Capabilities
+A key product consideration is determining **where AI adds meaningful value and where deterministic rules are more appropriate**.
 
-* Product record intake
-* Configurable completeness requirements
-* Missing-data identification
-* Data validation
-* Vendor communication
+## Initial Module: COPI Onboarding
+
+The first module focuses on getting a new product from initial intake to a defined state of completeness.
+
+The concept includes:
+
+* Configurable product requirements
+* Validation of product information
+* Identification of missing, incomplete, or invalid information
+* Assignment of responsibility for outstanding information
+* Vendor communication and follow-up
 * Response tracking
-* Automated follow-up
 * Revalidation
-* Completion management
+* Completion tracking
 * Audit history
+* Opportunities for AI-assisted processing
+
+## Product Approach
+
+A key assumption behind COPI is that the core process should not depend on a specific industry.
+
+A healthcare product, office product, retail item, or industrial product may have very different requirements, but the underlying process can remain similar:
+
+**What is required? → What is missing? → Who needs to provide it? → Does the response satisfy the requirement?**
+
+Requirements and validation rules should therefore be configurable rather than hardcoded into separate industry-specific workflows.
+
+## MVP Focus
+
+The initial MVP is intentionally focused on proving the core onboarding loop.
+
+The goal is to demonstrate that COPI can:
+
+1. Receive a new product
+2. Determine applicable requirements
+3. Identify gaps
+4. Request missing information
+5. Receive and process responses
+6. Revalidate the product
+7. Continue the process when necessary
+8. Determine when the product is complete
+9. Preserve the history of what happened
+
+The MVP does not attempt to solve every possible AI, integration, analytics, or product lifecycle use case.
+
+AI is part of the overall product vision, with specific AI capabilities introduced where they provide clear value and can be used responsibly within the workflow.
 
 ## Product Management Case Study
 
-This repository documents the product-management process behind COPI, including:
+This repository documents the product thinking behind COPI, including:
 
 * Product vision
 * Problem definition
 * Users and stakeholders
-* Product requirements
-* User stories
 * Workflow design
-* Data and business rules
-* Communication requirements
-* Exception scenarios
+* Product requirements
 * MVP scope
+* User stories and acceptance criteria
 * Product decisions
-* Future roadmap
+* Prioritization and backlog
 
-COPI is presented as a product-management case study demonstrating how an automation opportunity can be defined, structured, and prepared for implementation.
-
-## Product Goal
-
-Move product onboarding from a manual, reactive process to a consistent, measurable, and traceable workflow that continues until the product record is ready for use.
+The goal is to show how a product concept can move from an observed problem through product definition, prioritization, and delivery planning.
